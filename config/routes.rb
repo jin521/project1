@@ -1,56 +1,49 @@
+# == Route Map
+#
+#     Prefix Verb   URI Pattern                 Controller#Action
+#       root GET    /                           pages#home
+#      users GET    /users(.:format)            users#index
+#            POST   /users(.:format)            users#create
+#   new_user GET    /users/new(.:format)        users#new
+#  edit_user GET    /users/:id/edit(.:format)   users#edit
+#       user GET    /users/:id(.:format)        users#show
+#            PATCH  /users/:id(.:format)        users#update
+#            PUT    /users/:id(.:format)        users#update
+#            DELETE /users/:id(.:format)        users#destroy
+#    stories GET    /stories(.:format)          stories#index
+#            POST   /stories(.:format)          stories#create
+#  new_story GET    /stories/new(.:format)      stories#new
+# edit_story GET    /stories/:id/edit(.:format) stories#edit
+#      story GET    /stories/:id(.:format)      stories#show
+#            PATCH  /stories/:id(.:format)      stories#update
+#            PUT    /stories/:id(.:format)      stories#update
+#            DELETE /stories/:id(.:format)      stories#destroy
+#      likes GET    /likes(.:format)            likes#index
+#            POST   /likes(.:format)            likes#create
+#   new_like GET    /likes/new(.:format)        likes#new
+#  edit_like GET    /likes/:id/edit(.:format)   likes#edit
+#       like GET    /likes/:id(.:format)        likes#show
+#            PATCH  /likes/:id(.:format)        likes#update
+#            PUT    /likes/:id(.:format)        likes#update
+#            DELETE /likes/:id(.:format)        likes#destroy
+#      login GET    /login(.:format)            session#new
+#            POST   /login(.:format)            session#create
+#            DELETE /login(.:format)            session#destroy
+#
+
 Rails.application.routes.draw do
-  # The priority is based upon order of creation: first created -> highest priority.
-  # See how all your routes lay out with "rake routes".
+    root :to => 'pages#home'
 
-  # You can have the root of your site routed with "root"
-  # root 'welcome#index'
+    resources :users
 
-  # Example of regular route:
-  #   get 'products/:id' => 'catalog#view'
+    resources :stories
 
-  # Example of named route that can be invoked with purchase_url(id: product.id)
-  #   get 'products/:id/purchase' => 'catalog#purchase', as: :purchase
 
-  # Example resource route (maps HTTP verbs to controller actions automatically):
-  #   resources :products
+    get '/stories/:id/like/:whisky' => 'stories#like', as: :like
+    get '/stories/:id/unlike' => 'stories#unlike', as: :unlike
 
-  # Example resource route with options:
-  #   resources :products do
-  #     member do
-  #       get 'short'
-  #       post 'toggle'
-  #     end
-  #
-  #     collection do
-  #       get 'sold'
-  #     end
-  #   end
+    get '/login' => 'session#new'
+    post '/login' => 'session#create'
+    delete '/login' => 'session#destroy'
 
-  # Example resource route with sub-resources:
-  #   resources :products do
-  #     resources :comments, :sales
-  #     resource :seller
-  #   end
-
-  # Example resource route with more complex sub-resources:
-  #   resources :products do
-  #     resources :comments
-  #     resources :sales do
-  #       get 'recent', on: :collection
-  #     end
-  #   end
-
-  # Example resource route with concerns:
-  #   concern :toggleable do
-  #     post 'toggle'
-  #   end
-  #   resources :posts, concerns: :toggleable
-  #   resources :photos, concerns: :toggleable
-
-  # Example resource route within a namespace:
-  #   namespace :admin do
-  #     # Directs /admin/products/* to Admin::ProductsController
-  #     # (app/controllers/admin/products_controller.rb)
-  #     resources :products
-  #   end
 end

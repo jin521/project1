@@ -1,0 +1,10 @@
+<h1>Create New Story</h1>
+
+<%= form_for @story do |f| %>
+  <%= f.label :title %>
+  <%= f.text_field :title, :autofocus => true, :required => true %>
+  <%= f.label :content %>
+  <%= f.text_area :content, :required => true %>
+
+  <%= f.submit "share this story" %>
+<% end %>

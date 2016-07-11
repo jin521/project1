@@ -8,6 +8,28 @@
 </head>
 <body>
 
+
+
+<!-- <nav>
+<a href="<%= root_path %>">Home</a>
+<a href="<%= new_user_path  %>">New User</a>
+</nav> -->
+
+
+<nav>
+  <%= link_to 'HOME', root_path %>
+  <% if @current_user.present? %>
+    <%# if @current_user.admin? %>
+      <%#= link_to "Users", users_path %>
+    <%# end %>
+    <%= link_to "Logout #{ @current_user.email }", login_path, :method => :delete %>
+  <% else %>
+    <%= link_to 'SIGN UP', new_user_path %>
+    <%= link_to 'LOGIN', login_path %>
+  <% end %>
+</nav>
+
+
 <%= yield %>
 
 </body>
