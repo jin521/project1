@@ -1,9 +1,14 @@
 class StoriesController < ApplicationController
 
   before_action :get_story, only: [:edit, :show, :update, :destroy, :like, :unlike]
+  before_action :authorise_user, except: [:index]  # anyone can see the index of all stories
 
   def index
+    if params[:id].present?
+      @stories = User.find(params[:id]).stories
+    else
       @stories = Story.all
+    end
   end
 
   def new
@@ -12,9 +17,14 @@ class StoriesController < ApplicationController
 
 
   def create
+
     story = Story.new story_params
     story.user_id = @current_user.id
+    story.save
+
     redirect_to story
+    # Story.create = Story.new then save
+    # Story.update = setting the parameters then call save
   end
 
   def edit
@@ -22,7 +32,7 @@ class StoriesController < ApplicationController
 
   def update
     @story.update story_params
-    redirect_to @story
+    redirect_to @story   #implicitly pointing to this instance, same story_path(@story.id)
   end
 
   def show
@@ -33,6 +43,7 @@ class StoriesController < ApplicationController
     @story.destroy
     redirect_to stories_path
   end
+
 
   def like
     Like.create story_id: params[:id], user_id: @current_user.id, whisky: params[:whisky]
@@ -53,5 +64,9 @@ class StoriesController < ApplicationController
 
     def get_story
       @story = Story.find params[:id]
+    end
+
+    def authorise_user
+      redirect_to login_path unless @current_user.present?
     end
 end

@@ -1,21 +1,11 @@
-div{
-     padding: 200px 0;
+div.main{
+     padding: 150px 0;
      /*border: 3px solid green;*/
      text-align:center;
      display:block;
 }
 
 
-nav{
-  line-height: 150px;
-  letter-spacing: 2px;
-  font-size: 15px;
-  text-align: center;
-  color: #fff;
-  display: inline;
-  width: 100px;
-  position: relative;
-}
 
 body {
 

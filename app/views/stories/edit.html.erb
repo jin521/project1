@@ -1,6 +1,8 @@
 <h1>Edit Story</h1>
 
-<%= form_for @story do |f| %>
+
+<div class="form-group" >
+<%= form_for @story do |f|  %>
   <%= f.label :title %>
   <%= f.text_field :title, :autofocus => true, :required => true %>
   <%= f.label :content %>
@@ -8,3 +10,5 @@
 
   <%= f.submit "edit this story" %>
 <% end %>
+
+</div>

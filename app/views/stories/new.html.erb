@@ -1,10 +1,39 @@
+
+<div class="main">
 <h1>Create New Story</h1>
 
-<%= form_for @story do |f| %>
-  <%= f.label :title %>
-  <%= f.text_field :title, :autofocus => true, :required => true %>
-  <%= f.label :content %>
-  <%= f.text_area :content, :required => true %>
 
-  <%= f.submit "share this story" %>
+<!-- <form class="form-horizontal"> -->
+
+  <%= form_for @story, html: {class:"form-horizontal"} do |f| %>
+
+    <div class="form-group">
+          <div class="col-sm-5 control-label">
+             <%= f.label :title  %>
+          </div>
+          <div class="col-sm-2 control-from">
+
+              <%= f.text_field :title, :autofocus => true, :required => true, :placeholder =>"Title" %>
+
+          </div>
+    </div>
+
+
+
+   <div class="form-group">
+          <div class="col-sm-5 control-label">
+             <%= f.label :content %>
+         </div>
+         <div class="col-sm-2 control-from">
+          <%= f.text_area :content, :required => true, :placeholder =>"Enter your story here" %>
+         </div>
+  </div>
+
+    <div class="form-group">
+        <div >
+          <%= f.submit "share this story" %>
+        </div>
+    </div>
 <% end %>
+
+  <!-- </form> -->
