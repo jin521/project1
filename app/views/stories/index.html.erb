@@ -2,5 +2,5 @@
 <h3>  here is our list of stories from all over Sydney </h3>
 
 <% @stories.each do |story| %>
-    <p><%= link_to story.title, story_path(story.id) %> </p>
+    <p><%= link_to story.title, story_path(story.id) %> <span> by <%= link_to story.user.email, user_path(story.user_id) %></span></p>
 <% end %>

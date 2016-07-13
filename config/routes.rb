@@ -36,12 +36,9 @@ Rails.application.routes.draw do
     get '/user/:id/stories/' => 'stoies#index', :as =>'user_stories'
 
 
-    # get '/stories/:id/like/:whisky' => 'likes#like', as: :like   # shall be post request,but because Post can only post forms to server, use get here
-    # get '/stories/:id/unlike' => 'likes#unlike', as: :unlike    # shall be post request
-
-
-    get '/stories/:id/like/:whisky' => 'stories#like', as: :like   # shall be post request,but because Post can only post forms to server, use get here
-    get '/stories/:id/unlike' => 'stories#unlike', as: :unlike    # shall be post request
+    post '/stories/:id/like/:whisky' => 'stories#whisky', :as =>'whisky'
+    post '/stories/:id/like' => 'stories#like', :as =>'like'
+    post '/stories/:id/unlike' => 'stories#unlike', :as =>'unlike'
 
     get '/login' => 'session#new'
     post '/login' => 'session#create'

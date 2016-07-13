@@ -28,6 +28,11 @@ class UsersController < ApplicationController
     @user = @current_user  # can only edit/update  the current user, close the security hole  make url as users/edit, not showing the id
   end
 
+  def show
+      @user = @current_user
+  end
+
+
 
   def update
     @user = @current_user    # can only edit/update  the current user, close the security hole

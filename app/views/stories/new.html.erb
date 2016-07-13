@@ -1,6 +1,6 @@
 
 <div class="main">
-<h1>Create New Story</h1>
+<h2>Create New Story</h2>
 
 
 <!-- <form class="form-horizontal"> -->
@@ -13,7 +13,7 @@
           </div>
           <div class="col-sm-2 control-from">
 
-              <%= f.text_field :title, :autofocus => true, :required => true, :placeholder =>"Title" %>
+              <%= f.text_field :title, :autofocus => true, :required => true, :placeholder =>"Title"%>
 
           </div>
     </div>
@@ -24,8 +24,8 @@
           <div class="col-sm-5 control-label">
              <%= f.label :content %>
          </div>
-         <div class="col-sm-2 control-from">
-          <%= f.text_area :content, :required => true, :placeholder =>"Enter your story here" %>
+         <div class="col-sm-5 control-from">
+          <%= f.text_area :content, :required => true, :placeholder =>"Enter your story here",:class =>"form-control",:rows =>"15"%>
          </div>
   </div>
 

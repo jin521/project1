@@ -1,6 +1,6 @@
 class StoriesController < ApplicationController
 
-  before_action :get_story, only: [:edit, :show, :update, :destroy, :like, :unlike]
+  before_action :get_story, only: [:edit, :show, :update, :destroy, :like, :unlike, :whisky]
   before_action :authorise_user, except: [:index]  # anyone can see the index of all stories
 
   def index
@@ -21,7 +21,6 @@ class StoriesController < ApplicationController
     story = Story.new story_params
     story.user_id = @current_user.id
     story.save
-
     redirect_to story
     # Story.create = Story.new then save
     # Story.update = setting the parameters then call save
@@ -45,17 +44,26 @@ class StoriesController < ApplicationController
   end
 
 
-  def like
+  def whisky
     Like.create story_id: params[:id], user_id: @current_user.id, whisky: params[:whisky]
+    redirect_to @story
+  end
 
+  def like
+    Like.create story_id: params[:id], user_id: @current_user.id
     redirect_to @story
   end
 
   def unlike
-    Like.find_by(story_id: params[:id], user_id: @current_user.id).destroy
+    if params[:id].present?
+      Like.find_by(story_id: params[:id], user_id: @current_user.id).destroy
+      redirect_to @story
+    else
 
-    redirect_to @story
   end
+  end
+
+
 
   private
     def story_params
