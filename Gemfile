@@ -40,6 +40,7 @@ group :development, :test do
   gem 'byebug'
   gem 'pry-rails'
   gem 'annotate'
+  gem 'geocoder'
 end
 
 group :development do

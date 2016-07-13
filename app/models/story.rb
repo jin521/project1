@@ -13,4 +13,6 @@
 class Story < ActiveRecord::Base
     belongs_to :user
     has_many :likes
+    geocoded_by :ip_address, :latitude => :lat, :longitude => :lon
+    after_validation :geocode
 end

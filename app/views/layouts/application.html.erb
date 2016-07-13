@@ -16,6 +16,7 @@
 </nav> -->
 
 
+
 <nav  class="navbar navbar-inverse">
   <%= link_to 'HOME', root_path %>
   <% if @current_user.present? %>
@@ -24,9 +25,10 @@
     <%# end %>
 
     <!-- edit_use_path is static now, need to add a show page for this  -->
-    <%= link_to "Edit Profile", edit_user_path %>
+    <!-- <%= link_to "Edit Profile", edit_user_path %> -->
 
-    <%= link_to "Logout #{ @current_user.email }", login_path, :method => :delete %>
+    <%= link_to "Logout", login_path, :method => :delete %>
+    <%= link_to "my account", user_path(@current_user)%>
   <% else %>
     <%= link_to 'SIGN UP', new_user_path %>
     <%= link_to 'LOGIN', login_path %>

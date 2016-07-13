@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
 
   before_action :get_story, only: [:edit, :show, :update, :destroy, :like, :unlike, :whisky]
-  before_action :authorise_user, except: [:index]  # anyone can see the index of all stories
+  before_action :authorise_user, except: [:index, :show]  # anyone can see the index of all stories
 
   def index
     if params[:id].present?
@@ -35,6 +35,7 @@ class StoriesController < ApplicationController
   end
 
   def show
+
   end
 
 
