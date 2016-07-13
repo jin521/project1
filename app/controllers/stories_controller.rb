@@ -44,25 +44,15 @@ class StoriesController < ApplicationController
   end
 
 
-  def whisky
-    Like.create story_id: params[:id], user_id: @current_user.id, whisky: params[:whisky]
-    redirect_to @story
-  end
-
   def like
-    Like.create story_id: params[:id], user_id: @current_user.id
+    Like.create story_id: @story.id, user_id: @current_user.id #, whisky: params[:whisky]
     redirect_to @story
   end
 
   def unlike
-    if params[:id].present?
-      Like.find_by(story_id: params[:id], user_id: @current_user.id).destroy
-      redirect_to @story
-    else
-
+    Like.find_by(story_id: @story.id, user_id: @current_user.id).destroy
+    redirect_to @story
   end
-  end
-
 
 
   private

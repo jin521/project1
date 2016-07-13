@@ -6,7 +6,7 @@ class SessionController < ApplicationController
     user = User.find_by :email => params[:email]
     if user.present? && user.authenticate(params[:password])
       session[:user_id] = user.id
-      redirect_to root_path
+      redirect_to user
     else
       redirect_to login_path
     end
@@ -17,4 +17,3 @@ class SessionController < ApplicationController
     redirect_to root_path
   end
 end
- 

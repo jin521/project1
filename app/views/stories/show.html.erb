@@ -4,16 +4,19 @@
 <h1>
   <%= @story.title %>
 </h1>
+<h3><%= @story.likes.count %> <span class="glyphicon glyphicon-heart"></span> </h3>
 <p>
   <%= @story.content %>
 </p>
 
 <!-- link to like and whisky only if they don't already like or offer whisky, and unlike otherwise -->
-<%= link_to "Like", like_path(@story.id, "false") %>
-<%= link_to "Whisky", like_path(@story.id, "true") %>
-<%= link_to "Unlike", unlike_path(@story.id) %>
+<% if @current_user.likes.where(:story_id => @story.id).empty? %>
+  <%= link_to  "like", like_path(@story.id), :method => :post %>
+<% else %>
+  <%= link_to "unlike", unlike_path(@story.id), :method => :post %>
+<% end %>
 
-<% if @story.user_id == @current_user.id %>
+<% if @current_user.present? && @story.user_id == @current_user.id %>
   <%= link_to "Edit", edit_story_path(@story.id) %>
   <%= link_to "Delete Story", @story, method: :delete, data: { confirm: 'Are you sure?' }  %>
 <% end %>

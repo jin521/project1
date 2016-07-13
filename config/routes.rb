@@ -36,9 +36,9 @@ Rails.application.routes.draw do
     get '/user/:id/stories/' => 'stoies#index', :as =>'user_stories'
 
 
-    post '/stories/:id/like/:whisky' => 'stories#whisky', :as =>'whisky'
     post '/stories/:id/like' => 'stories#like', :as =>'like'
     post '/stories/:id/unlike' => 'stories#unlike', :as =>'unlike'
+
 
     get '/login' => 'session#new'
     post '/login' => 'session#create'
