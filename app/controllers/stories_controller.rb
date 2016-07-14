@@ -4,11 +4,11 @@ class StoriesController < ApplicationController
   before_action :authorise_user, except: [:index, :show]  # anyone can see the index of all stories
 
   def index
-    if params[:id].present?
-      @stories = User.find(params[:id]).stories
-    else
+    # if params[:id].present?
+    #   @stories = User.find(params[:id]).stories
+    # else
       @stories = Story.all
-    end
+    # end
   end
 
   def new
