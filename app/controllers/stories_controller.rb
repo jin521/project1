@@ -19,7 +19,7 @@ class StoriesController < ApplicationController
   def create
     story = Story.new story_params
     ip_address = request.ip
-    story.address = "#{Geocoder.search(ip_address).first.city}, #{Geocoder.search(ip_address).first.region_name}"
+    story.address = Geocoder.search(ip_address).first.city
     story.user_id = @current_user.id
     if story.save
       redirect_to story
