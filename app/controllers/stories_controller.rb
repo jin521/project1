@@ -19,7 +19,10 @@ class StoriesController < ApplicationController
   def create
     story = Story.new story_params
     ip_address = request.ip
+    puts " ip address is #{ip_address}"
+    puts " geocoder search result is #{Geocoder.search(ip_address)}"
     story.address = Geocoder.search(ip_address).first.city
+    puts " address is #{story.address}"
     story.user_id = @current_user.id
     if story.save
       redirect_to story
@@ -61,7 +64,7 @@ class StoriesController < ApplicationController
 
   private
     def story_params
-      params.require(:story).permit(:title, :content, :address, :ip_address)
+      params.require(:story).permit(:title, :content, :address)
     end
 
     def get_story
