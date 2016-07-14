@@ -8,10 +8,12 @@ body {
   z-index: -1;
   width:100%;
 
+
 }
 
 .new-story {
   background-color: transparent;
+
 }
 
 
@@ -46,7 +48,7 @@ body {
 .story-show {
   display:block;
   position: absolute;
-  border: 3px solid green;
+
   height: 400px;
   width: 500px;
 
