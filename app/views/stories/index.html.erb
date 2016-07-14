@@ -2,19 +2,24 @@
 
 
 <div class = "story-index">
-<h3>  here is our list of stories from all over Sydney </h3>
+  <h3>  here is our list of stories from all over Sydney </h3>
+  <table style="width:50%" class="table-striped">
+    <tr>
+      <th>Story</th>
+      <th>User</th>
+    </tr>
+    <% @stories.each do |story| %>
+      <tr>
+        <td><%= link_to story.title, story_path(story.id) %></td>
+        <td>by <%= link_to story.user.name, user_path(story.user_id) %></td>
+      </tr>
+    <% end %>
+  </table>
+</div>
 
-  <% @stories.each do |story| %>
-   <table style="width:100%">
 
-  <tr>
-    <td><%= link_to story.title, story_path(story.id) %></td>
-    <td>by <%= link_to story.user.email, user_path(story.user_id) %></td>
 
-  </tr>
 
-</table>
-
-<% end %>
-
+<div>
+  <img src="/assets/cover.jpg" alt="" />
 </div>

@@ -1,25 +1,23 @@
 
-<div class = "main" >
+<div class ="story-show" >
 
 <h1><%= @story.title %></h1>
 <h3><%= @story.likes.count %> <span class="glyphicon glyphicon-glass"></span> </h3>
-<p>created on <%= @story.created_at.strftime '%A %B %e, %Y'  %></p>
-<p>updated on <%= @story.updated_at.strftime '%A %B %e, %Y'  %></p>
+<p>created on <%= @story.created_at.strftime '%A %B %e, %Y' %></p>
+<p>updated on <%= @story.updated_at.strftime '%A %B %e, %Y' %></p>
 <p>location: <%= @story.address %></p>
 <p><%= @story.content %></p>
 
 
 <% if @current_user.present?%>
-<!-- link to like and whisky only if they don't already like or offer whisky, and unlike otherwise -->
+
   <% if @current_user.likes.where(:story_id => @story.id).empty? %>
     <%= link_to  "whisky", like_path(@story.id), :method => :post %>
   <% else %>
     <%= link_to "unwhisky", unlike_path(@story.id), :method => :post %>
   <% end %>
 <% else %>
-  <p>
-    <%= link_to("Log in to whiskey this story!", login_path) %>
-  </p>
+  <p><%= link_to("Log in to whiskey this story!", login_path) %> </p>
 <% end %>
 
 <% if @current_user.present? && @story.user_id == @current_user.id %>

@@ -1,80 +1,63 @@
-
-
-
-
 body {
-
-  /*background-image: url('/assets/scotch.jpg');*/
-  /*background-image: url('/assets/chinese.jpg');*/
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 12px;
-  line-height: 18px;
+  font-size: 11px;
+  line-height: 15px;
+}
+
+.home-image {
+  z-index: -1;
+  width:100%;
+
+}
+
+.new-story {
+  background-color: transparent;
 }
 
 
-
-
+.homepagetext {
+  font-family: 'Tangerine', serif;
+  font-size: 100px;
+}
 .main{
-     padding: 150px 0;
+     padding: 120px 0;
      /*border: 3px solid green;*/
      display:block;
 }
 
-.sign-up .log-in h4 {
+.log-in h4 {
   text-align: center;
-
-}
-
-.story-index {
-  padding: 50px 0;
-  display:block;
-  position: absolute;
 }
 
 
+.home {
 
-.navigation li a {
-    line-height: 100px;
-    letter-spacing: 2px;
-    font-size: 11px;
-    color: #fff;
-    display: block;
-    width: 100px;
-    position: relative;
+  padding: 30px;
 }
-
-/*
-a {
-  color: #000;
-  text-decoration:none;
-
-  &:visited {
-    color: #666;
-  }
-
-  &:hover {
-    color: #fff;
-    background-color: #000;
-  }
-}*/
-
-/*
-ul{
-    list-style-type: none;
-}*/
-
-img {
-    position: absolute;
-    left: 0px;
-    top: 0px;
-    z-index: -1;
-}
-
-.signup{
+.sign-up{
   margin-right: 0;
   margin-left: 0;
   background-color: #fff;
   border-color: #ddd;
   border-width: 1px;
   border-radius: 4px 4px 0 0;
+}
+
+.story-show {
+  display:block;
+  position: absolute;
+  border: 3px solid green;
+  height: 400px;
+  width: 500px;
+
+}
+
+
+
+img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+    width:100%;
 }
