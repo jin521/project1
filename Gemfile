@@ -43,7 +43,9 @@ group :development, :test do
   gem 'annotate'
 end
 
-gem 'rails_12factor', group: :production
+group :prouction do
+  gem 'rails_12factor'
+end
 
 group :development do
   # Access an IRB console on exception pages or by using <%= console %> in views
