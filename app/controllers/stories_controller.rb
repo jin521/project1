@@ -35,7 +35,7 @@ class StoriesController < ApplicationController
   end
 
   def show
-
+    raise 'awefa'
   end
 
 
