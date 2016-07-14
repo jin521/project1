@@ -1,5 +1,6 @@
 
-<div class ="main">
+
+<div class="sign-up col-xs-4 col-xs-offset-4">
 
 <h1>Edit user</h1>
 
@@ -11,17 +12,27 @@
   </ol>
 <% end %>
 
+<form>
+
 <%= form_for @user  do |f| %>
-  <%= f.label :email %>
-  <%= f.text_field :email, :autofocus => true, :required => true %>
+    <div class ="form-group">
+        <%= f.label :email,:class => "control-label" %>
+        <%= f.text_field :email, :autofocus => true, :required => true,  :class => 'form-control' %>
+    </div>
 
-  <%= f.label :password %>
-  <%= f.password_field :password %>
+    <div class ="form-group">
+        <%= f.label :password %>
+        <%= f.password_field :password, :class => 'form-control' %>
+    </div>
 
-  <%= f.label :password_confirmation %>
-  <%= f.password_field :password_confirmation %>
+    <div class ="form-group">
+        <%= f.label :password_confirmation %>
+        <%= f.password_field :password_confirmation, :class => 'form-control'  %>
+    </div>
 
-  <%= f.submit  %>
-<% end %>
+    <%= f.submit  %>
+  <% end %>
+
+</form>
 
 </div>

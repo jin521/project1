@@ -4,19 +4,12 @@
 <p><%= link_to "edit your profile", edit_user_path %></p>
 
 
-
-
-
 <div class = 'main'>
 <p>you have posted these stories :</p>
-
 <% @user.stories.each do |story| %>
-  <p><%= link_to story.title, story_path(story.id) %><span>  <%= link_to 'Edit', edit_story_path(@user) %></span>  <span><%= link_to 'Delete', @user, :method => :delete, :data => { :confirm => "Are you sure?" } %></span></p>
+  <p><%= link_to story.title, story_path(story.id) %>|<span>  <%= link_to 'Edit', edit_story_path(@user) %></span>  <span><%= link_to 'Delete', @user, :method => :delete, :data => { :confirm => "Are you sure?" } %></span></p>
   <% end %>
 
-
 </br>
-<p><%= link_to "add more stories", new_story_path %></p>
-
-
+<p><%= link_to "add more stories...", new_story_path %></p>
 </div>

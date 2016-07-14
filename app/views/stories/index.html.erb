@@ -1,12 +1,11 @@
 
+
+
+<div class = "story-index">
 <h3>  here is our list of stories from all over Sydney </h3>
 
-
-
   <% @stories.each do |story| %>
-<table style="width:100%">
-
-
+   <table style="width:100%">
 
   <tr>
     <td><%= link_to story.title, story_path(story.id) %></td>
@@ -17,3 +16,5 @@
 </table>
 
 <% end %>
+
+</div>

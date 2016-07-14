@@ -1,13 +1,5 @@
 
 
-div.main{
-     padding: 150px 0;
-     /*border: 3px solid green;*/
-     text-align:center;
-     display:block;
-}
-
-
 
 
 body {
@@ -15,9 +7,30 @@ body {
   /*background-image: url('/assets/scotch.jpg');*/
   /*background-image: url('/assets/chinese.jpg');*/
   font-family: verdana, arial, helvetica, sans-serif;
-  font-size: 15px;
+  font-size: 12px;
   line-height: 18px;
 }
+
+
+
+
+.main{
+     padding: 150px 0;
+     /*border: 3px solid green;*/
+     display:block;
+}
+
+.sign-up .log-in h4 {
+  text-align: center;
+
+}
+
+.story-index {
+  padding: 50px 0;
+  display:block;
+  position: absolute;
+}
+
 
 
 .navigation li a {
@@ -50,18 +63,18 @@ ul{
     list-style-type: none;
 }*/
 
+img {
+    position: absolute;
+    left: 0px;
+    top: 0px;
+    z-index: -1;
+}
 
-button {
-    background-color: grey;
-    border: none;
-    color: white;
-    padding: 8px 10px;
-    text-align: center;
-    text-decoration: none;
-    display: inline-block;
-    font-size: 12px;
-    margin: 4px 2px;
-    cursor: pointer;
-    border-radius: 12px;
-    box-shadow: 0 8px 16px 0 rgba(0,0,0,0.2), 0 6px 20px 0 rgba(0,0,0,0.19);
+.signup{
+  margin-right: 0;
+  margin-left: 0;
+  background-color: #fff;
+  border-color: #ddd;
+  border-width: 1px;
+  border-radius: 4px 4px 0 0;
 }

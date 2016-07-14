@@ -19,10 +19,7 @@ class StoriesController < ApplicationController
   def create
     story = Story.new story_params
     ip_address = request.ip
-    puts " ip address is #{ip_address}"
-    puts " geocoder search result is #{Geocoder.search(ip_address)}"
     story.address = Geocoder.search(ip_address).first.city
-    puts " address is #{story.address}"
     story.user_id = @current_user.id
     if story.save
       redirect_to story
@@ -53,6 +50,7 @@ class StoriesController < ApplicationController
 
   def like
     Like.create story_id: @story.id, user_id: @current_user.id #, whisky: params[:whisky]
+    UserMailer.send_whisky(@current_user, @story.user).deliver_now
     redirect_to @story
   end
 
