@@ -5,12 +5,12 @@
   <%= stylesheet_link_tag    'application', media: 'all', 'data-turbolinks-track' => true %>
   <%= javascript_include_tag 'application', 'data-turbolinks-track' => true %>
   <%= csrf_meta_tags %>
+  <link href="css/bootstrap.min.css" rel="stylesheet">
+
   <link rel="stylesheet" type="text/css"
          href="https://fonts.googleapis.com/css?family=Tangerine">
 </head>
 <body>
-
-
 
 <!-- <nav>
 <a href="<%= root_path %>">Home</a>
@@ -19,7 +19,7 @@
 
 
 
-<nav  class= "navbar navbar-inverse">
+<nav class= "navbar navbar-inverse ">
   <%= link_to 'HOME', root_path %>
   <% if @current_user.present? %>
     <%# if @current_user.admin? %>

@@ -14,30 +14,3 @@
 //= require jquery_ujs
 //= require turbolinks
 //= require_tree .
-var DateBox = React.createClass({
-  render: function() {
-    var date   = new Date();
-    var hour   = date.getHours() % 12 || 12;
-    var minute = date.getMinutes();
-    var second = date.getSeconds();
-    minute     = checkTime(minute);
-    second     = checkTime(second);
-
-    function checkTime(i) {
-        if (i < 10) {
-            i = "0" + i
-        };
-        return i;
-    }
-
-    return (
-        <h1>{hour}<span>:</span>{minute}</h1>
-    );
-  }
-});
-
-// Render
-ReactDOM.render(
-  <DateBox />,
-  document.getElementById('time')
-);

@@ -2,7 +2,9 @@
 
 
 <div class = "story-index">
-  <h3>  here is our list of stories from all over Sydney </h3>
+  <h4>  Here is our list of stories from all over Sydney </h4>
+
+
   <table style="width:50%">
     <tr>
       <th>Story</th>
@@ -11,7 +13,7 @@
     <% @stories.each do |story| %>
       <tr>
         <td><%= link_to story.title, story_path(story.id) %></td>
-        <td>by <%= link_to story.user.name, user_path(story.user_id) %></td>
+        <td>by <%= story.user.name %></td>
       </tr>
     <% end %>
   </table>
