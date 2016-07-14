@@ -20,8 +20,11 @@ class StoriesController < ApplicationController
 
     story = Story.new story_params
     story.user_id = @current_user.id
-    story.save
-    redirect_to story
+    if story.save
+      redirect_to story
+    else
+      render :new
+    end
     # Story.create = Story.new then save
     # Story.update = setting the parameters then call save
   end
