@@ -1,7 +1,7 @@
 class StoriesController < ApplicationController
 
   before_action :get_story, only: [:edit, :show, :update, :destroy, :like, :unlike, :whisky]
-  before_action :authorise_user, except: [:index, :show, :create]  # anyone can see the index of all stories
+  before_action :authorise_user, except: [:index, :show]  # anyone can see the index of all stories
 
   def index
     if params[:id].present?
@@ -17,8 +17,9 @@ class StoriesController < ApplicationController
 
 
   def create
-
     story = Story.new story_params
+    story.ip_address = request.ip
+    story.address = Geocoder.search(ip_address)
     story.user_id = @current_user.id
     if story.save
       redirect_to story
