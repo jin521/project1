@@ -1,8 +1,8 @@
 
 
-#Stories 4 whiskies
+# Stories 4 whiskies
 
-This app is  part of my Web Development Immersive 15 couuse with General Assembly.
+This app is  part of my Web Development Immersive ( WDI15) course with General Assembly.
 
 ### The idea
 everyone loves stories, everyone has stories to tell, this app is designed for story and whisk(e)y lovers to meet and connect, you can browse all stories and "whisky" someone 's story meaning that you are intending to ask the creator of this story out and by him ( her) a whisky in real life, an email will be sent to this person with your email address to start the communication. check the location of the story to be sure you are in the same area. here genders are purposely hidden, how about connecting to a soul?
@@ -14,18 +14,18 @@ everyone loves stories, everyone has stories to tell, this app is designed for s
 
 ### Tech Stack:
 
-HTML
-JavaScript
-CSS
-Bootstrap
-Ruby
-Rails
-SendGrid
-Geocoder
-Heroku
+* HTML
+* JavaScript
+* CSS
+* Bootstrap
+* Ruby
+* Rails
+* SendGrid
+* Geocoder
+* Heroku
 
 
-###Features:
+### Features:
 
 - Browse the stories as guest via " I have whiskies to trade your stories" entrance
 
@@ -43,7 +43,7 @@ Heroku
 Below listed are the features I would like to implement further to this:
 
 - withdraw the already sent white if you change your mind.
-- translation API for different languages.
+- translation API for different languages input.
 - adding comments to stories
 
 
