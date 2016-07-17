@@ -43,7 +43,7 @@ everyone loves stories, everyone has stories to tell, this app is designed for s
 
 Below listed are the features I would like to implement further to this:
 
-- withdraw the already sent white if you change your mind.
+- withdraw the already sent whisky if you change your mind.
 - translation API for different languages input.
 - adding comments to stories
 
