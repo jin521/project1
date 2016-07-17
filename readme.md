@@ -1,3 +1,4 @@
+<<<<<<< HEAD
 
 
 # Stories 4 whiskies
@@ -53,3 +54,6 @@ Below listed are the features I would like to implement further to this:
 https://stories4whiskies.herokuapp.com/
 
 Thanks for stopping by, and I hope you enjoying this app!
+=======
+
+>>>>>>> 3bbc056093aa4955e52b8111536915f3f5caa7ea
